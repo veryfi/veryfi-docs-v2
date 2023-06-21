@@ -1,0 +1,390 @@
+<div id="react-document-processing-asynchronous-doc">
+   <div id="new-api-docs-asynchronous-processing">
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <h3 class="h3-title" id="api-docs-sync-async">Synchronous vs Asynchronous Processing</h3>
+            <p class="p-text">The synchronous/asynchronous document processing is controlled by the “async” request parameter. By default the “async” parameter is false, so all the documents processed synchronously return the extracted data in the response.</p>
+            <h5 class="h5-title">Parameters</h5>
+            <hr>
+            <p><span class="parameter-text">async</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">Boolean</span></p>
+            <p class="p-text">Optional flag to enable asynchronous processing mode (false by default).</p>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div class="sections-render-row-note">
+               <div data-testid="note-container-link-test" class="row note-container">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Note </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph">Only <a class="learn-more-link" href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post">Receipt &amp; Invoices </a>document types support synchronous and asynchronous document processing.</p></pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <div class="section-multiple-text-container-0">
+                  <h3 class="h3-title" id="synchronous-response-new-api-docs">Synchronous Processing</h3>
+                  <p class="p-text">Veryfi's API is capable of extracting structured data from unstructured documents in just seconds. To get the extracted data instantly the synchronous processing is the best choose.</p>
+                  <h5 class="h5-title">Synchronous Processing Workflow:</h5>
+                  <p class="p-text-list">1. Document is submitted for processing with a <a class="p-text-list" href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post" style="color: rgb(139, 153, 238);">POST</a> request “async” parameter been set to false</p>
+                  <p class="p-text-list">2. Veryfi processes the document and returns an instant response with all the extracted document data</p>
+               </div>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <span class="section-multiple-text-right-side"></span>
+               <div class="row response-viewer-container">
+                  <nav class="response-nav"><span class="response-tab method-header-font">Sync Processing Is Used By Default</span></nav>
+                  <div class="tab-content">
+                     <div data-testid="tab-code-container-5" class="tab-pane tab-pane-container active">
+                        <pre class="response-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black;"><code style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>    </span><span class="hljs-attr">"async"</span><span>: </span><span style="color: rgb(136, 0, 0);">false</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">4</span></code></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <div class="section-multiple-text-container-0">
+                  <h3 class="h3-title" id="asynchronous-new-api-docs">Asynchronous Processing</h3>
+                  <p class="p-text">Asynchronous processing is ideal when submitting multiple documents simultaneously for 
+                     batch processing. The Documents API will send a notification to the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">webhook configured</a> when the 
+                     documents are processed and ready to be consumed.
+                  </p>
+                  <p class="p-text">This asynchronous flow is achieved with the use of <a href="#set-webhooks-new-api-docs" style="color: rgb(139, 153, 238);"> Webhooks </a>.</p>
+                  <h5 class="h5-title"> Asynchronous Processing Workflow: </h5>
+                  <ol>
+                     <li>
+                        <p class="p-text"> Document is submitted for processing with the async switch turned on.</p>
+                     </li>
+                     <li>
+                        <p class="p-text">Veryfi processes the document</p>
+                     </li>
+                     <li>
+                        <p class="p-text">Veryfi makes a request to the webhook URL</p>
+                     </li>
+                     <li>
+                        <p class="p-text">The service that is serving your webhook makes a request to the Veryfi API to get the processed document's details</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <span class="section-multiple-text-right-side"></span>
+               <div class="row response-viewer-container">
+                  <nav class="response-nav"><span class="response-tab method-header-font">Enabling Async Processing</span></nav>
+                  <div class="tab-content">
+                     <div data-testid="tab-code-container-5" class="tab-pane tab-pane-container active">
+                        <pre class="response-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black;"><code style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>    </span><span class="hljs-attr">"async"</span><span>: </span><span style="color: rgb(136, 0, 0);">true</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>}</code></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <h3 class="h3-title" id="set-webhooks-new-api-docs">Step 1: Configure Webhook URL</h3>
+               <p class="p-text">Your webhook URL is tied to your user profile and can be configured in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);"> Profile Keys Section </a></p>
+               <div data-testid="note-container-link-test" class="note-container-personalized">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Note </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph">Make sure your webhook responds with a 200 HTTP Status Code in a timely manner, under 10 seconds. <a class="learn-more-link" href=""> </a></p><p data-testid="note-paragraph-text" class="note-text-paragraph">It will need to be able to process requests similar to the one in <a class="learn-more-link" href="#receive-webhook-new-api-docs">Receiving and validating the webhook request </a></p></pre>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 section-text-note-webhook-example middle-column-padding">
+               <div data-testid="tabs-code-viewer-test" class="row tabs-code-viewer-container">
+                  <nav data-testid="tabs-code-header" class="markdown-nav">
+                     <nav class="left-method-title"><span data-testid="method-code-header" class="method method-header-font">Test Webhook Url</span><span data-testid="endpoint-code-content" class="end-point method-header-font"></span></nav>
+                     <nav data-testid="dropdown-code-button" class="right-side-button-list">
+                        <ul data-testid="dropdown-code-list" class="nav-list-container">
+                           <li data-testid="dropdown-code-button-options"><span class="code-example-select-single">CURL</span></li>
+                           <li data-testid="dropdown-code-button-options">
+                              <a data-testid="copy-button-test">
+                                 <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-icon" data-testid="copy-code-test">
+                                    <path d="M0.743164 16.0107C0.743164 17.4395 1.44727 18.1572 2.8623 18.1572H9.28809C10.7031 18.1572 11.4072 17.4326 11.4072 16.0107V14.7461H12.6035C14.0117 14.7461 14.7227 14.0215 14.7227 12.5996V3.10449C14.7227 1.68262 14.0117 0.958008 12.6035 0.958008H6.17773C4.76953 0.958008 4.05859 1.67578 4.05859 3.10449V4.36914H2.8623C1.4541 4.36914 0.743164 5.08691 0.743164 6.51562V16.0107ZM7.72266 3.30273C7.42188 3.30273 7.28516 3.10449 7.28516 2.89941V2.75586C7.28516 2.54395 7.42188 2.35254 7.72266 2.35254H11.0586C11.3525 2.35254 11.4961 2.54395 11.4961 2.75586V2.89941C11.4961 3.10449 11.3525 3.30273 11.0586 3.30273H7.72266ZM1.84375 15.9902V6.5293C1.84375 5.85938 2.20605 5.46973 2.91699 5.46973H5.15918V9.43457C5.15918 10.2959 5.59668 10.7266 6.44434 10.7266H10.3066V15.9902C10.3066 16.6738 9.9375 17.0566 9.2334 17.0566H2.91016C2.20605 17.0566 1.84375 16.6738 1.84375 15.9902ZM6.57422 9.69434C6.30078 9.69434 6.19141 9.58496 6.19141 9.31152V5.72266L10.0947 9.69434H6.57422Z" fill="#B0B3CB"></path>
+                                 </svg>
+                              </a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </nav>
+                  <div class="tab-content" style="z-index: -1;">
+                     <div data-testid="tab-code-container-1" class="tab-pane tab-pane-container active">
+                        <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-plaintext" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>curl --location --request POST 'https://{YOUR_WEBHOOK_URL}/' \ 
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">2</span>       --header 'Content-Type: application/json' \ 
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>       --header 'x-veryfi-signature: 3awRveqxsYK5nB6YjcaMoq1Tov87ksq+YZ34ab7YoEq=' \ 
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">4</span>       --data-raw '{"id": 41331192, "created": "2021-09-19 20:37:47"}'
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">5</span></code></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <div class="section-multiple-text-container-0">
+                  <h3 class="h3-title" id="submit-document-new-api-docs">Step 2: Submit a document for processing</h3>
+                  <p class="p-text">Submit a document for processing using one of the methods described in the <a href="/api/docs/documents/process/" style="color: rgb(139, 153, 238);"> document processing</a> section above</p>
+                  <p class="p-text">Make sure that you enable asynchronous processing mode by adding the following input parameter to the JSON request body:</p>
+               </div>
+               <div class="section-multiple-text-container-1">
+                  <h5 class="h5-title"> Parameters</h5>
+                  <hr>
+                  <p><span class="parameter-text">async</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">Boolean</span></p>
+                  <p class="p-text">Optional flag to enable asynchronous processing mode (set to true to enable).</p>
+                  <h5 class="h5-title"> Returns</h5>
+                  <p><span class="parameter-text">id</span> <span class="parameter-info">Int</span></p>
+                  <p class="p-text">The response will contain the Document ID assigned to the document that is being processed. No additional information is available as the document has yet to be processed.</p>
+               </div>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <div class="section-multiple-text-right-side">
+                  <h5 class="h5-title">Ways to process a document</h5>
+                  <hr>
+                  <p class="p-text"><a href="/api/docs/documents/process/#form-data-upload-new-api-docs" style="color: rgb(139, 153, 238);"> Multipart/form-data upload </a></p>
+                  <p class="p-text">Submit a request to process a multipart/form-data file upload.</p>
+                  <hr>
+                  <p class="p-text"><a href="/api/docs/documents/process/#base-64-new-api-docs" style="color: rgb(139, 153, 238);"> Base64 encoded file upload </a></p>
+                  <p class="p-text">Submit a request to process a Base64 encoded document.</p>
+                  <hr>
+                  <p class="p-text"><a href="/api/docs/documents/process/#using-a-url-new-api-docs" style="color: rgb(139, 153, 238);"> Specify a file URL </a></p>
+                  <p class="p-text">Submit a request to process a file using a URL.</p>
+               </div>
+               <div class="row response-viewer-container">
+                  <nav class="response-nav"><span class="response-tab method-header-font">Post Parameter</span></nav>
+                  <div class="tab-content">
+                     <div data-testid="tab-code-container-5" class="tab-pane tab-pane-container active">
+                        <pre class="response-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black;"><code style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>  </span><span class="hljs-attr">"async"</span><span>: </span><span style="color: rgb(136, 0, 0);">true</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>}</code></pre>
+                     </div>
+                  </div>
+               </div>
+               <div class="row response-viewer-container">
+                  <nav class="response-nav"><span class="response-tab method-header-font">Async Processing Response</span></nav>
+                  <div class="tab-content">
+                     <div data-testid="tab-code-container-5" class="tab-pane tab-pane-container active">
+                        <pre class="response-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black;"><code style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>  </span><span class="hljs-attr">"id"</span><span>: </span><span style="color: rgb(136, 0, 0);">123456789</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>}</code></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <div class="section-multiple-text-container-0">
+                  <h3 class="h3-title" id="receive-webhook-new-api-docs"> Step 3: Receive a webhook request</h3>
+                  <p class="p-text">Within seconds of submitting a document for processing, you will receive a webhook POST request to your specified webhook URL. The request body will be in JSON format.</p>
+               </div>
+               <div class="section-multiple-text-container-1">
+                  <h5 class="h5-title">Parameters</h5>
+                  <hr>
+                  <p><span class="parameter-text">event</span> <span class="parameter-info">String</span></p>
+                  <p class="p-text">The status of the document sent for processing.</p>
+                  <ul>
+                     <li>
+                        <p class="p-text"><span class="p-text-title">document.created</span> - document has been process and ready to be retrieved</p>
+                     </li>
+                     <li>
+                        <p class="p-text"><span class="p-text-title">document.failed</span> -document processing has failed</p>
+                     </li>
+                  </ul>
+                  <hr>
+                  <p><span class="parameter-text">data</span> <span class="parameter-info">Object</span></p>
+                  <p class="p-text">JSON object that contains the extracted information from the processed document.</p>
+                  <hr>
+                  <p><span class="parameter-text">id</span> <span class="parameter-info">Int</span></p>
+                  <p class="p-text">The id of the processed document.</p>
+                  <hr>
+                  <p><span class="parameter-text">created</span> <span class="parameter-info">Date</span></p>
+                  <p class="p-text">The date-time indicating when the processed was processed.</p>
+                  <hr>
+               </div>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <span class="section-multiple-text-right-side"></span>
+               <div class="row response-viewer-container">
+                  <nav class="response-nav"><span class="response-tab method-header-font">Success Webhook Post Request</span></nav>
+                  <div class="tab-content">
+                     <div data-testid="tab-code-container-5" class="tab-pane tab-pane-container active">
+                        <pre class="response-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black;"><code style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>    </span><span class="hljs-attr">"event"</span><span>: </span><span style="color: rgb(0, 85, 0);">"document.created"</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span>    </span><span class="hljs-attr">"data"</span><span>: {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span>        </span><span class="hljs-attr">"id"</span><span>: </span><span style="color: rgb(136, 0, 0);">123456789</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span>        </span><span class="hljs-attr">"created"</span><span>: </span><span style="color: rgb(0, 85, 0);">"2021-10-20 15:27:26"</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span>    }
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span></code></pre>
+                     </div>
+                  </div>
+               </div>
+               <div class="row response-viewer-container">
+                  <nav class="response-nav"><span class="response-tab method-header-font">Failure Webhook Post Request</span></nav>
+                  <div class="tab-content">
+                     <div data-testid="tab-code-container-5" class="tab-pane tab-pane-container active">
+                        <pre class="response-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black;"><code style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>    </span><span class="hljs-attr">"event"</span><span>: </span><span style="color: rgb(0, 85, 0);">"document.failed"</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span>    </span><span class="hljs-attr">"data"</span><span>: {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span>        </span><span class="hljs-attr">"id"</span><span>: </span><span style="color: rgb(136, 0, 0);">123456789</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span>        </span><span class="hljs-attr">"created"</span><span>: </span><span style="color: rgb(0, 85, 0);">"2021-10-20 15:27:26"</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span>    }
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span></code></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <div class="text-json-container-0">
+                  <h3 class="h3-title" id="validate-webhook-new-api-docs">Step 4: Validate the webhook request</h3>
+                  <p class="p-text">Your application should validate that Veryfi is the service that sent the webhook request. Securing sensitive data and safeguarding your application and servers from misuse is essential.</p>
+                  <p class="p-text">Veryfi includes a validation header in the webhook request so that your application can validate that Veryfi sent the inbound request. This optional step adds an extra layer of security to prevent spoofing of the webhook call.</p>
+                  <h5 class="h5-title">Document processing workflow for webhooks:</h5>
+                  <p class="p-text">Once a document is processed, Veryfi will send a notification to the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">configured webhook</a>.</p>
+                  <p class="p-text">If Veryfi does not receive a success response in a timely manner (any response code &lt; 400 is considered successful), it tries three more times with an increasing wait period.
+                     The default time-out settings are 3 seconds for the connection and 20 seconds for the response, and the maximum repeats per request is 4.
+                  </p>
+                  <p class="p-text">If all three webhook deliveries fail, two API webhook failed emails will be sent to configured admin email address:</p>
+                  <ol>
+                     <li>
+                        <p class="p-text">The first email will include the first failed document id.</p>
+                     </li>
+                     <li>
+                        <p class="p-text">The second email will contain all the document ids that failed to receive a successful webhook response.</p>
+                     </li>
+                  </ol>
+                  <p class="p-text">Veryfi will only send these two emails in a 24 hour period for failed webhook responses.</p>
+               </div>
+               <div class="text-json-container-1">
+                  <h5 class="h5-title">To validate the incoming request, you will need:</h5>
+                  <hr>
+                  <p><span class="parameter-text">payload</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span></p>
+                  <p class="p-text">The entire JSON request body.</p>
+                  <hr>
+                  <p><span class="parameter-text">client_secret</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span></p>
+                  <p class="p-text">The Client Secret can be found in the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);"> Profile Keys Section </a></p>
+                  <hr>
+                  <p><span class="parameter-text">validation_signature</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span></p>
+                  <p class="p-text">The value of the <span style="font-weight: 700;">x-veryfi-signature</span> header in the request</p>
+                  <hr>
+               </div>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <div>
+                  <div data-testid="note-container-test" class="row note-container">
+                     <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Validation Header </span></nav>
+                     <div class="tab-pane tab-pane-container active">
+                        <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> "x-veryfi-signature": "3awRveqxsYK5nB6YjcaMoq1Tov87ksq+YZ34ab7YoEq=" </p></pre>
+                     </div>
+                  </div>
+               </div>
+               <div class="section-text-json-note-container">
+                  <div data-testid="tabs-code-viewer-test" class="row tabs-code-viewer-container">
+                     <nav data-testid="tabs-code-header" class="markdown-nav">
+                        <nav class="left-method-title"><span data-testid="method-code-header" class="method method-header-font">Webhook Request Validation</span><span data-testid="endpoint-code-content" class="end-point method-header-font"></span></nav>
+                        <nav data-testid="dropdown-code-button" class="right-side-button-list">
+                           <ul data-testid="dropdown-code-list" class="nav-list-container">
+                              <li data-testid="dropdown-code-button-options">
+                                 <select class="code-example-select" data-testid="dropdown-select-test">
+                                    <option value="1" data-testid="select-option-test">PYTHON</option>
+                                    <option value="2" data-testid="select-option-test">JAVASCRIPT</option>
+                                 </select>
+                              </li>
+                              <li data-testid="dropdown-code-button-options">
+                                 <a data-testid="copy-button-test">
+                                    <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-icon" data-testid="copy-code-test">
+                                       <path d="M0.743164 16.0107C0.743164 17.4395 1.44727 18.1572 2.8623 18.1572H9.28809C10.7031 18.1572 11.4072 17.4326 11.4072 16.0107V14.7461H12.6035C14.0117 14.7461 14.7227 14.0215 14.7227 12.5996V3.10449C14.7227 1.68262 14.0117 0.958008 12.6035 0.958008H6.17773C4.76953 0.958008 4.05859 1.67578 4.05859 3.10449V4.36914H2.8623C1.4541 4.36914 0.743164 5.08691 0.743164 6.51562V16.0107ZM7.72266 3.30273C7.42188 3.30273 7.28516 3.10449 7.28516 2.89941V2.75586C7.28516 2.54395 7.42188 2.35254 7.72266 2.35254H11.0586C11.3525 2.35254 11.4961 2.54395 11.4961 2.75586V2.89941C11.4961 3.10449 11.3525 3.30273 11.0586 3.30273H7.72266ZM1.84375 15.9902V6.5293C1.84375 5.85938 2.20605 5.46973 2.91699 5.46973H5.15918V9.43457C5.15918 10.2959 5.59668 10.7266 6.44434 10.7266H10.3066V15.9902C10.3066 16.6738 9.9375 17.0566 9.2334 17.0566H2.91016C2.20605 17.0566 1.84375 16.6738 1.84375 15.9902ZM6.57422 9.69434C6.30078 9.69434 6.19141 9.58496 6.19141 9.31152V5.72266L10.0947 9.69434H6.57422Z" fill="#B0B3CB"></path>
+                                    </svg>
+                                 </a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </nav>
+                     <div class="tab-content" style="z-index: -1;">
+                        <div data-testid="tab-code-container-1" class="tab-pane tab-pane-container active">
+                           <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-python" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(203, 120, 50);">import</span><span> hashlib
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> hmac
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> base64
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span></span><span style="color: rgb(203, 120, 50);">from</span><span> typing </span><span style="color: rgb(203, 120, 50);">import</span><span> *
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span><span></span><span class="hljs-function" style="color: rgb(203, 120, 50);">def</span><span class="hljs-function"> </span><span class="hljs-function hljs-title">create_signature</span><span class="hljs-function">(</span><span class="hljs-function" style="color: rgb(185, 185, 185);">data_payload: </span><span class="hljs-function" style="color: rgb(224, 196, 108);">Dict</span><span class="hljs-function" style="color: rgb(185, 185, 185);">, client_secret: </span><span class="hljs-function" style="color: rgb(224, 196, 108);">str</span><span class="hljs-function">) -&gt; </span><span class="hljs-function" style="color: rgb(224, 196, 108);">str</span><span class="hljs-function">:</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span>    signature = hmac.new(
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span><span>        client_secret.encode(</span><span style="color: rgb(106, 135, 89);">"utf-8"</span><span>), msg=</span><span style="color: rgb(224, 196, 108);">str</span><span>(data_payload).encode(</span><span style="color: rgb(106, 135, 89);">"utf-8"</span><span>), digestmod=hashlib.sha256
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span>    ).digest()
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span>    base64_signature = </span><span style="color: rgb(224, 196, 108);">str</span><span>(base64.b64encode(signature), </span><span style="color: rgb(106, 135, 89);">"utf-8"</span><span>).strip()
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>    </span><span style="color: rgb(203, 120, 50);">return</span><span> base64_signature
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span><span>generated_signature = create_signature(payload[</span><span style="color: rgb(106, 135, 89);">"data"</span><span>], client_secret)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span><span></span><span style="color: rgb(127, 127, 127);"># Confirm that the generated signature equals the validation signature</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">16</span><span></span><span style="color: rgb(127, 127, 127);"># from the x-veryfi-signature header</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">17</span>is_valid = generated_signature == validation_signature</code></pre>
+                        </div>
+                        <div data-testid="tab-code-container-2" class="tab-pane tab-pane-container">
+                           <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-javascript" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span class="hljs-function" style="color: rgb(203, 120, 50);">function</span><span class="hljs-function"> </span><span class="hljs-function hljs-title">createSignature</span><span class="hljs-function">(</span><span class="hljs-function" style="color: rgb(185, 185, 185);">payload, clientSecret</span><span class="hljs-function">) </span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span> </span><span style="color: rgb(203, 120, 50);">return</span><span> crypto
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span>   .createHmac(</span><span style="color: rgb(106, 135, 89);">"sha256"</span><span>, clientSecret)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span>   .update(
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span>     </span><span style="color: rgb(224, 196, 108);">JSON</span><span>.stringify(payload.data)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span><span>       .replace(</span><span style="color: rgb(104, 150, 186);">/,/g</span><span>, </span><span style="color: rgb(106, 135, 89);">", "</span><span>)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span>       .replace(</span><span style="color: rgb(104, 150, 186);">/":/g</span><span>, </span><span style="color: rgb(106, 135, 89);">'": '</span><span>)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span><span>       .replace(</span><span style="color: rgb(104, 150, 186);">/"/g</span><span>, </span><span style="color: rgb(106, 135, 89);">"'"</span><span>)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span>   )
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span>   .digest(</span><span style="color: rgb(106, 135, 89);">"base64"</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span><span></span><span style="color: rgb(203, 120, 50);">const</span><span> generatedSignature = createSignature(payload, clientSecret);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span><span></span><span style="color: rgb(203, 120, 50);">const</span><span> isValid = generatedSignature === validationSignature;</span></code></pre>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <h3 class="h3-title" id="retrieve-document-new-api-docs">Step 5: Retrieve the processed document</h3>
+            <p class="p-text">Now that the webhook request has been validated as coming from Veryfi, the next step is to retrieve the data extracted from the document.</p>
+            <p class="p-text">To retrieve the Document's details, perform the request from the <a href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents-document_id/get" style="color: rgb(139, 153, 238);"> Get a Document section </a>.</p>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div class="api-response-container-0">
+               <h5 class="h5-title">To retrieve the document, you will need:</h5>
+               <hr>
+               <p><span class="parameter-text">document_id</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span></p>
+               <p class="p-text">The unique identifier of the document. The JSON request body for a <a href="https://app.veryfi.com/api/docs/api-docs-process-asynchronous/#receive-webhook-new-api-docs" style="color: rgb(139, 153, 238);">successful webhook request</a> will contain the Document's id.</p>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+   </div>
+</div>
