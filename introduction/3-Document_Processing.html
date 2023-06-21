@@ -1,0 +1,260 @@
+<div id="new-api-docs-process-documents">
+   <div class="row">
+      <div class="col-md-6 middle-column-padding">
+         <h3 class="h3-title" id="api-docs-document-processing">Document Processing</h3>
+         <p class="p-text bold-text">A user can submit documents of different content types for processing. Below you will find three different methods to submit a document for processing:</p>
+         <h5 class="h5-title">Process a document by content type:</h5>
+         <hr>
+         <p><a class="p-text-green-link" href="#form-data-upload-new-api-docs" style="color: rgb(139, 153, 238); font-size: 16px;">Method 1: Multipart/form-data upload</a></p>
+         <p class="p-text">Submit a request to process a multipart/form-data file upload.</p>
+         <hr>
+         <p><a class="p-text-green-link" href="#base-64-new-api-docs" style="color: rgb(139, 153, 238); font-size: 16px;">Method 2: Base64 encoded file upload</a></p>
+         <p class="p-text">Submit a request to process a Base64 encoded document.</p>
+         <hr>
+         <p><a class="p-text-green-link" href="#using-a-url-new-api-docs" style="color: rgb(139, 153, 238); font-size: 16px;">Method 3: Specify a file URL</a></p>
+         <p class="p-text">Submit a request to process a file using a URL.</p>
+         <h5 class="h5-title" style="margin-top: 80px;">Retrieving extracted data by response types:</h5>
+         <hr>
+         <p><a class="p-text-green-link" href="/api/docs/api-docs-process-asynchronous/#synchronous-response-new-api-docs" style="color: rgb(139, 153, 238); font-size: 16px;">Synchronous response</a></p>
+         <p class="p-text">All processing requests are synchronous by default. Therefore, a user that submits a POST request for document processing will receive the extracted data in the API response.</p>
+         <hr>
+         <p><a class="p-text-green-link" href="/api/docs/api-docs-process-asynchronous/#asynchronous-new-api-docs" style="color: rgb(139, 153, 238); font-size: 16px;">Asynchronous response</a></p>
+         <p class="p-text">Asynchronous processing requests receive an immediate response. However, the data extraction runs in a background process. Once data extraction completes, 
+            Veryfi makes a request to your configured webhook URL. The webhook URL is configurable in the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> section of <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>.
+         </p>
+      </div>
+      <div class="col-md-6 middle-column-padding">
+         <div class="sections-render-row-note">
+            <div data-testid="note-container-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Note </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><li data-testid="note-paragraph-text-greater" class="note-text-paragraph"> JPEG/JPG, PNG, and PDF are some of the accepted file formats. <a class="learn-more-link" href="https://faq.veryfi.com/en/articles/5415096-file-formats-veryfi-supports">Learn more</a></li><li data-testid="note-paragraph-text-greater" class="note-text-paragraph"> You can submit a zip containing all the related files to process multiple files as a single <a class="learn-more-link" href="https://faq.veryfi.com/en/articles/6243055-processing-zip-files">Learn more</a></li><li data-testid="note-paragraph-text-greater" class="note-text-paragraph"> Check out the PDF Splitter API to process a PDF with multiple documents. <a class="learn-more-link" href="https://faq.veryfi.com/en/articles/6311471-pdf-splitter-api">Learn more</a></li><li data-testid="note-paragraph-text-greater" class="note-text-paragraph"> See file requirements to learn how accuracy depends on the image's quality and clarity. <a class="learn-more-link" href="https://faq.veryfi.com/en/articles/6171105-file-requirements">Learn more</a></li></pre>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-6 middle-column-padding">
+         <h3 class="h3-title" id="form-data-upload-new-api-docs">Method 1: Process file using multipart/form-data upload</h3>
+         <p class="p-text">Submit a request to process a multipart/form-data file upload.</p>
+         <h5 class="h5-title">Parameters</h5>
+         <hr>
+         <p><span class="parameter-text">file_name</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+         <p class="p-text">The filename of the image being sent for processing (e.g starbucks.jpg).</p>
+         <hr>
+         <p><span class="parameter-text">file</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">File</span></p>
+         <p class="p-text">The file being sent for processing.(<a href="https://faq.veryfi.com/en/articles/5415096-file-formats-veryfi-supports" style="color: rgb(139, 153, 238);">A pdf, jpg, .jpeg, .png, etc.</a>)</p>
+      </div>
+      <div class="col-md-6 middle-column-padding">
+         <div class="sections-render-row-note">
+            <div data-testid="note-container-link-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Try Multipart/Form-Data File Upload </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post">Receipts &amp; Invoices</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-checks-v2/#/operations/processCheck">Checks</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-w2-v2/#/paths/api-v8-partner-w2s/post">W2s</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-w9-v2/#/paths/api-v8-partner-w9s/post">W9s</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-business-cards-v2/#/paths/api-v7-partner-business-cards/post">Business Cards</a></li></p></pre>
+               </div>
+            </div>
+         </div>
+         <div class="sections-render-row-note">
+            <div data-testid="note-container-link-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Tip </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph"> <a class="learn-more-link" href="#uploading-zip-file-new-api-docs">Uploading a zip file </a>as a multipart/form-data is the fastest way to upload files</p></pre>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-6 middle-column-padding">
+         <h3 class="h3-title" id="base-64-new-api-docs">Method 2: Process a file using Base64 encoding</h3>
+         <p class="p-text">Submit a request to process a Base64 encoded document.</p>
+         <h5 class="h5-title">Parameters</h5>
+         <hr>
+         <p><span class="parameter-text">file_name</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+         <p class="p-text">The filename of the image being sent for processing (e.g starbucks.jpg).</p>
+         <hr>
+         <p><span class="parameter-text">file_data</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">File</span></p>
+         <p class="p-text">The Base64 encoded file being sent for processing.</p>
+      </div>
+      <div class="col-md-6 middle-column-padding">
+         <div class="sections-render-row-note">
+            <div data-testid="note-container-link-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Try Base64 Encoded File Upload </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post">Receipts &amp; Invoices</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-checks-v2/#/operations/processCheck">Checks</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-w2-v2/#/paths/api-v8-partner-w2s/post">W2s</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-w9-v2/#/paths/api-v8-partner-w9s/post">W9s</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-business-cards-v2/#/paths/api-v7-partner-business-cards/post">Business Cards</a></li></p></pre>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-6 middle-column-padding">
+         <h3 class="h3-title" id="using-a-url-new-api-docs">Method 3: Process a file using a URL</h3>
+         <p class="p-text">Submit a request to process a file using a URL.</p>
+         <h5 class="h5-title">Parameters</h5>
+         <hr>
+         <p><span class="parameter-text">file_url</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> (if file_url isn't specified)   <span class="parameter-info">String</span></p>
+         <p class="p-text">The publicly accessible URL to a file, e.g. "https://cdn.example.com/receipt.jpg"</p>
+         <hr>
+         <p><span class="parameter-text">file_data</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span>  (if file_url isn't specified)   <span class="parameter-info">File</span></p>
+         <p class="p-text">A list of publicly accessible URLs to multiple files, e.g. ["https://cdn.example.com/receipt1.jpg", "https://cdn.example.com/receipt2.jpg"]</p>
+      </div>
+      <div class="col-md-6 middle-column-padding">
+         <div class="sections-render-row-note">
+            <div data-testid="note-container-link-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Try Uploading a File from URL </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post">Receipts &amp; Invoices</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-checks-v2/#/operations/processCheck">Checks</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-w2-v2/#/paths/api-v8-partner-w2s/post">W2s</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-w9-v2/#/paths/api-v8-partner-w9s/post">W9s</a></li></p><p data-testid="note-paragraph-text" class="note-text-paragraph"><li><a class="learn-more-link" href="/api/docs/api-docs-business-cards-v2/#/paths/api-v7-partner-business-cards/post">Business Cards</a></li></p></pre>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div>
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <div class="standard-section-text-container-0">
+               <h3 class="h3-title" id="uploading-zip-file-new-api-docs">Uploading Zip files</h3>
+               <p class="p-text">Uploading a zip file as a multipart/form-data is the fastest way to upload files.</p>
+               <div data-testid="note-container-test" class="note-container-personalized">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Tip </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> Uploading a zip file as a multipart/form-data is the fastest way to upload files </p></pre>
+                  </div>
+               </div>
+            </div>
+            <div class="standard-section-text-container-1">
+               <h5 class="h5-title" id="uploading-zip-file-new-api-docs">How to upload a zip file</h5>
+               <p class="p-text-list">1. Create a zip file containing your files for processing</p>
+               <p class="p-text-list">2. <a href="/api/docs/auth/" style="color: rgb(139, 153, 238);">Configure Veryfi Client</a> with your <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">CLIENT_ID</a>, <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">CLIENT_SECRET</a>, <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">USERNAME</a> and <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">API_KEY</a></p>
+               <p class="p-text-list">3. <a href="/api/docs/documents/process/#form-data-upload-new-api-docs" style="color: rgb(139, 153, 238);">Submit the zip file</a> with Veryfi Client for processing</p>
+            </div>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div class="section-spacer"></div>
+            <div data-testid="tabs-code-viewer-test" class="row tabs-code-viewer-container">
+               <nav data-testid="tabs-code-header" class="markdown-nav">
+                  <nav class="left-method-title"><span data-testid="method-code-header" class="method method-header-font">Uploading a Zip File</span><span data-testid="endpoint-code-content" class="end-point method-header-font"></span></nav>
+                  <nav data-testid="dropdown-code-button" class="right-side-button-list">
+                     <ul data-testid="dropdown-code-list" class="nav-list-container">
+                        <li data-testid="dropdown-code-button-options"><span class="code-example-select-single">PYTHON</span></li>
+                        <li data-testid="dropdown-code-button-options">
+                           <a data-testid="copy-button-test">
+                              <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-icon" data-testid="copy-code-test">
+                                 <path d="M0.743164 16.0107C0.743164 17.4395 1.44727 18.1572 2.8623 18.1572H9.28809C10.7031 18.1572 11.4072 17.4326 11.4072 16.0107V14.7461H12.6035C14.0117 14.7461 14.7227 14.0215 14.7227 12.5996V3.10449C14.7227 1.68262 14.0117 0.958008 12.6035 0.958008H6.17773C4.76953 0.958008 4.05859 1.67578 4.05859 3.10449V4.36914H2.8623C1.4541 4.36914 0.743164 5.08691 0.743164 6.51562V16.0107ZM7.72266 3.30273C7.42188 3.30273 7.28516 3.10449 7.28516 2.89941V2.75586C7.28516 2.54395 7.42188 2.35254 7.72266 2.35254H11.0586C11.3525 2.35254 11.4961 2.54395 11.4961 2.75586V2.89941C11.4961 3.10449 11.3525 3.30273 11.0586 3.30273H7.72266ZM1.84375 15.9902V6.5293C1.84375 5.85938 2.20605 5.46973 2.91699 5.46973H5.15918V9.43457C5.15918 10.2959 5.59668 10.7266 6.44434 10.7266H10.3066V15.9902C10.3066 16.6738 9.9375 17.0566 9.2334 17.0566H2.91016C2.20605 17.0566 1.84375 16.6738 1.84375 15.9902ZM6.57422 9.69434C6.30078 9.69434 6.19141 9.58496 6.19141 9.31152V5.72266L10.0947 9.69434H6.57422Z" fill="#B0B3CB"></path>
+                              </svg>
+                           </a>
+                        </li>
+                     </ul>
+                  </nav>
+               </nav>
+               <div class="tab-content" style="z-index: -1;">
+                  <div data-testid="tab-code-container-1" class="tab-pane tab-pane-container active">
+                     <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-python" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(203, 120, 50);">import</span><span> zipfile
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span></span><span style="color: rgb(203, 120, 50);">from</span><span> veryfi </span><span style="color: rgb(203, 120, 50);">import</span><span> Client
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span>list_files = [</span><span style="color: rgb(106, 135, 89);">'receipt1.jpg'</span><span>, </span><span style="color: rgb(106, 135, 89);">'receipt2.jpg'</span><span>]
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span>zip_file_path = </span><span style="color: rgb(106, 135, 89);">'receipts.zip'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span></span><span style="color: rgb(203, 120, 50);">with</span><span> zipfile.ZipFile(zip_file_path, </span><span style="color: rgb(106, 135, 89);">'w'</span><span>) </span><span style="color: rgb(203, 120, 50);">as</span><span> zipF:
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span><span>    </span><span style="color: rgb(203, 120, 50);">for</span><span> file </span><span style="color: rgb(203, 120, 50);">in</span><span> list_files:
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span>        zipF.write(file, compress_type=zipfile.ZIP_DEFLATED)
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>client_id = </span><span style="color: rgb(106, 135, 89);">'your_client_id'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span><span>client_secret = </span><span style="color: rgb(106, 135, 89);">'your_client_secret'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span><span>username = </span><span style="color: rgb(106, 135, 89);">'your_username'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span><span>api_key = </span><span style="color: rgb(106, 135, 89);">'your_password'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">16</span>veryfi_client = Client(client_id, client_secret, username, api_key)
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">17</span>response = veryfi_client.process_document(zip_file_path)</code></pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+   </div>
+   <div>
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <div class="standard-section-text-container-0">
+               <h5 class="h5-title">How to manually upload a Base64 encoded file</h5>
+               <p class="p-text-list">1. Compress the files</p>
+               <p class="p-text-list">2. Create a Base64 encoded string from the data</p>
+               <p class="p-text-list">3. Configure <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Client ID and Authorization headers</a></p>
+               <p class="p-text-list">4. Configure <a href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post" style="color: rgb(139, 153, 238);">Document Processing</a> request parameters.</p>
+               <p class="p-text-list">5. Submit the <a href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post" style="color: rgb(139, 153, 238);">POST request for processing</a></p>
+            </div>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div data-testid="tabs-code-viewer-test" class="row tabs-code-viewer-container">
+               <nav data-testid="tabs-code-header" class="markdown-nav">
+                  <nav class="left-method-title"><span data-testid="method-code-header" class="method method-header-font">Processing in-memory compressed files</span><span data-testid="endpoint-code-content" class="end-point method-header-font"></span></nav>
+                  <nav data-testid="dropdown-code-button" class="right-side-button-list">
+                     <ul data-testid="dropdown-code-list" class="nav-list-container">
+                        <li data-testid="dropdown-code-button-options"><span class="code-example-select-single">PYTHON</span></li>
+                        <li data-testid="dropdown-code-button-options">
+                           <a data-testid="copy-button-test">
+                              <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-icon" data-testid="copy-code-test">
+                                 <path d="M0.743164 16.0107C0.743164 17.4395 1.44727 18.1572 2.8623 18.1572H9.28809C10.7031 18.1572 11.4072 17.4326 11.4072 16.0107V14.7461H12.6035C14.0117 14.7461 14.7227 14.0215 14.7227 12.5996V3.10449C14.7227 1.68262 14.0117 0.958008 12.6035 0.958008H6.17773C4.76953 0.958008 4.05859 1.67578 4.05859 3.10449V4.36914H2.8623C1.4541 4.36914 0.743164 5.08691 0.743164 6.51562V16.0107ZM7.72266 3.30273C7.42188 3.30273 7.28516 3.10449 7.28516 2.89941V2.75586C7.28516 2.54395 7.42188 2.35254 7.72266 2.35254H11.0586C11.3525 2.35254 11.4961 2.54395 11.4961 2.75586V2.89941C11.4961 3.10449 11.3525 3.30273 11.0586 3.30273H7.72266ZM1.84375 15.9902V6.5293C1.84375 5.85938 2.20605 5.46973 2.91699 5.46973H5.15918V9.43457C5.15918 10.2959 5.59668 10.7266 6.44434 10.7266H10.3066V15.9902C10.3066 16.6738 9.9375 17.0566 9.2334 17.0566H2.91016C2.20605 17.0566 1.84375 16.6738 1.84375 15.9902ZM6.57422 9.69434C6.30078 9.69434 6.19141 9.58496 6.19141 9.31152V5.72266L10.0947 9.69434H6.57422Z" fill="#B0B3CB"></path>
+                              </svg>
+                           </a>
+                        </li>
+                     </ul>
+                  </nav>
+               </nav>
+               <div class="tab-content" style="z-index: -1;">
+                  <div data-testid="tab-code-container-1" class="tab-pane tab-pane-container active">
+                     <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-python" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(203, 120, 50);">import</span><span> io
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> zipfile
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> base64
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> requests
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> json
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span>list_files = [</span><span style="color: rgb(106, 135, 89);">'receipt1.jpg'</span><span>, </span><span style="color: rgb(106, 135, 89);">'receipt2.jpg'</span><span>]
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span>zip_buffer = io.BytesIO()
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span></span><span style="color: rgb(203, 120, 50);">with</span><span> zipfile.ZipFile(zip_buffer, </span><span style="color: rgb(106, 135, 89);">"a"</span><span>, zipfile.ZIP_DEFLATED, </span><span style="color: rgb(104, 150, 186);">False</span><span>) </span><span style="color: rgb(203, 120, 50);">as</span><span> zip_file:
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>    </span><span style="color: rgb(203, 120, 50);">for</span><span> file_name </span><span style="color: rgb(203, 120, 50);">in</span><span> list_files:
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span><span>        </span><span style="color: rgb(203, 120, 50);">with</span><span> </span><span style="color: rgb(224, 196, 108);">open</span><span>(file_name, </span><span style="color: rgb(106, 135, 89);">"rb"</span><span>) </span><span style="color: rgb(203, 120, 50);">as</span><span> image_file:
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span>            zip_file.writestr(file_name, image_file.read())
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span>encode_zip_string = base64.b64encode(zip_buffer.getvalue())
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">16</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">17</span><span>client_id = </span><span style="color: rgb(106, 135, 89);">'your_client_id'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">18</span><span>client_secret = </span><span style="color: rgb(106, 135, 89);">'your_client_secret'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">19</span><span>username = </span><span style="color: rgb(106, 135, 89);">'your_username'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">20</span><span>api_key = </span><span style="color: rgb(106, 135, 89);">'your_password'</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">21</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">22</span>headers = {
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">23</span><span>    </span><span style="color: rgb(106, 135, 89);">"User-Agent"</span><span>: </span><span style="color: rgb(106, 135, 89);">"Python Veryfi-Python/3.0.0"</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">24</span><span>    </span><span style="color: rgb(106, 135, 89);">"Accept"</span><span>: </span><span style="color: rgb(106, 135, 89);">"application/json"</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">25</span><span>    </span><span style="color: rgb(106, 135, 89);">"Content-Type"</span><span>: </span><span style="color: rgb(106, 135, 89);">"application/json"</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">26</span><span>    </span><span style="color: rgb(106, 135, 89);">"Client-Id"</span><span>: client_id,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">27</span><span>    </span><span style="color: rgb(106, 135, 89);">"Authorization"</span><span>: </span><span style="color: rgb(106, 135, 89);">f"apikey </span><span style="color: rgb(224, 196, 108);">{username}</span><span style="color: rgb(106, 135, 89);">:</span><span style="color: rgb(224, 196, 108);">{api_key}</span><span style="color: rgb(106, 135, 89);">"</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">28</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">29</span><span>api_url = </span><span style="color: rgb(106, 135, 89);">"api.veryfi.com/api/v8/partner/documents"</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">30</span>request_arguments = {
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">31</span><span>    </span><span style="color: rgb(106, 135, 89);">"file_name"</span><span>: file_name,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">32</span><span>    </span><span style="color: rgb(106, 135, 89);">"file_data"</span><span>: encode_zip_string,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">33</span>}
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">34</span>_session = requests.Session()
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">35</span>response = _session.request(
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">36</span><span>            </span><span style="color: rgb(106, 135, 89);">"POST"</span><span>,
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">37</span>            url=api_url,
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">38</span>            headers=headers,
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">39</span>            data=json.dumps(request_arguments),
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">40</span>        )</code></pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+   </div>
+</div>
