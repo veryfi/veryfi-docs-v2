@@ -1,0 +1,271 @@
+<div id="react-introduction-auth-doc">
+   <div id="new-api-docs-introduction">
+      <div class="row">
+         <div class="col-md-12 middle-column-padding">
+            <h3 class="h3-title" id="auth-new-api-docs">Authentication</h3>
+            <h3 class="h3-title">Credentials</h3>
+            <p class="p-text">To access the Veryfi API programmatically, you will need to configure your client with 
+               the correct credentials. Make a copy of your <span style="font-weight: 700;">CLIENT_ID</span>
+               , <span style="font-weight: 700;">Username</span>, and <span style="font-weight: 700;">API Key</span> and paste them into their 
+               respective <a href="#new-api-docs-client-header" style="color: rgb(139, 153, 238);">Client</a> and <a href="#new-api-docs-authorization-header" style="color: rgb(139, 153, 238);">Authorization</a> 
+               locations.
+            </p>
+            <p class="p-text-list">1. Go to <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> 
+               section in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>
+            </p>
+            <p class="p-text-list">2. Make a copy of your <span style="font-weight: 700;">CLIENT_ID</span></p>
+            <p class="p-text-list">3. Make a copy of your <span style="font-weight: 700;">Username</span> and <span style="font-weight: 700;">API Key</span></p>
+            <p class="p-text-list">4. Paste them into your <a href="#new-api-docs-client-header" style="color: rgb(139, 153, 238);">Client</a> and <a href="#new-api-docs-client-header" style="color: rgb(139, 153, 238);">Authorization</a> headers</p>
+         </div>
+      </div>
+      <hr class="section-splitter">
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <h3 id="new-api-docs-client-header" class="h3-title">Client Header</h3>
+            <p class="p-text">The Client Header identifies the partner (i.e., you) requesting Veryfi's API.</p>
+            <h5 class="h5-title">Required Keys</h5>
+            <hr>
+            <p><span class="parameter-text">CLIENT_ID</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+            <p class="p-text">Obtained from the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> 
+               section in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>
+            </p>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div class="sections-render-row-note">
+               <div data-testid="note-container-test" class="row note-container">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Client header </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> CLIENT-ID: "CLIENT_ID" </p></pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <h3 id="new-api-docs-authorization-header" class="h3-title">Authorization Header</h3>
+            <p class="p-text">The Authorization Header provides credentials that authenticate a user agent with a server, allowing access to protected resources.</p>
+            <h5 class="h5-title">Required Keys</h5>
+            <hr>
+            <p><span class="parameter-text">USERNAME</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+            <p class="p-text">Obtained from the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> 
+               section in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>
+            </p>
+            <hr>
+            <p><span class="parameter-text">API_KEY</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+            <p class="p-text">Obtained from the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> 
+               section in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>
+            </p>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div class="sections-render-row-note">
+               <div data-testid="note-container-test" class="row note-container">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Authorization header </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> AUTHORIZATION: "apikey USERNAME:API_KEY" </p></pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+      <div class="row">
+         <div class="col-md-6 middle-column-padding">
+            <h3 class="h3-title" id="new-api-docs-enviroment-url">Environment URL</h3>
+            <p class="p-text">To be able to make a request to Veryfi, you need a URL that consists of two parts: <span style="font-weight: 700;">ENVIROMENT_URL</span> and <span style="font-weight: 700;">ENDPOINT_URL</span>, 
+               Check the documentation below for the endpoint that best fits your business needs.
+            </p>
+            <h5 class="h5-title">Required Keys</h5>
+            <hr>
+            <p><span class="parameter-text">ENVIROMENT_URL</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+            <p class="p-text">Obtained from the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> 
+               section in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>
+            </p>
+            <hr>
+            <p><span class="parameter-text">ENDPOINT_URL</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+            <p class="p-text">Check the documentation for <a href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post" style="color: rgb(139, 153, 238);">Invoices &amp; Receipts</a>, <a href="/api/docs/api-docs-business-cards-v2/#/paths/api-v7-partner-business-cards/post" style="color: rgb(139, 153, 238);"> Business Cards</a>, <a href="/api/docs/api-docs-checks-v2/#/operations/processCheck" style="color: rgb(139, 153, 238);">Checks</a>, <a href="/api/docs/api-docs-w2-v2/#/paths/api-v8-partner-w2s/post" style="color: rgb(139, 153, 238);">W-2s</a> or <a href="/api/docs/api-docs-w9-v2/#/paths/api-v8-partner-w9s/post" style="color: rgb(139, 153, 238);">W-9s</a> for your desired endpoint. </p>
+         </div>
+         <div class="col-md-6 middle-column-padding">
+            <div class="sections-render-row-note">
+               <div data-testid="note-container-test" class="row note-container">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Environment URL </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> https://api.veryfi.com/ </p></pre>
+                  </div>
+               </div>
+            </div>
+            <div class="sections-render-row-note">
+               <div data-testid="note-container-test" class="row note-container">
+                  <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> ENDPOINT_URL Example </span></nav>
+                  <div class="tab-pane tab-pane-container active">
+                     <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> https://api.veryfi.com/api/v8/partner/documents/ </p></pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <div class="text-json-container-0">
+                  <h3 class="h3-title" id="new-api-docs-signature-timestamp">Signature &amp; Timestamp Headers</h3>
+                  <p class="p-text">All requests to Veryfi’s endpoints should have X-VERYFI-REQUEST-SIGNATURE and X-VERYFI-REQUEST-TIMESTAMP headers as an additional layer of authentication.</p>
+                  <p class="p-text">A user encodes a POST request with the <span style="font-weight: 700;">CLIENT_SECRET</span> signature. A signed POST request is the request itself and the signature from the request.</p>
+                  <h5 class="h5-title">Example:</h5>
+                  <p class="p-text">A user sends a <a href="/api/docs/api-docs-v2/#/paths/api-v8-partner-documents/post" style="color: rgb(139, 153, 238);">POST request to /Documents</a> with a signature to process a new Document.</p>
+                  <p class="p-text">Veryfi checks the signature sent along with the signature on file. Since the authorized server knows the <span style="font-weight: 700;">CLIENT_SECRET</span>, the server can validate and compare if the incoming request's signature coincides with the server's signature.</p>
+                  <h5 class="h5-title">Required Keys</h5>
+                  <hr>
+                  <p><span class="parameter-text">CLIENT_SECRET</span> <span class="parameter-info" style="color: rgb(255, 197, 109); font-size: 14px;">REQUIRED</span> <span class="parameter-info">String</span></p>
+                  <p class="p-text">Obtained from the <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Keys</a> 
+                     section in <a href="/api/settings/keys/" style="color: rgb(139, 153, 238);">Settings</a>
+                  </p>
+                  <p class="p-text" style="margin-top: 48px;">Signatures are valid for 30 minutes from the time of generation.</p>
+                  <p class="p-text"><span style="font-weight: 700;">X-Veryfi-Request-Timestamp</span> value is a Unix Timestamp in milliseconds (ms) since 
+                     <a href="https://www.epochconverter.com" style="color: rgb(139, 153, 238);">epoch</a>.
+                  </p>
+                  <p class="p-text">Since <span style="font-weight: 700;">CLIENT_SECRET</span> is essential to the application's password. it automatically does the signing when using a <a href="/api/docs/sdks/" style="color: rgb(139, 153, 238);">Veryfi SDK</a>.</p>
+                  <p class="p-text">Refer to the code examples on the right for a demonstration of how the value of the 
+                     <span style="font-weight: 700;">X-VERYFI-REQUEST-SIGNATURE</span> header is generated.
+                  </p>
+               </div>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <div>
+                  <div data-testid="note-container-test" class="row note-container">
+                     <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Signature Header </span></nav>
+                     <div class="tab-pane tab-pane-container active">
+                        <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> X-Veryfi-Request-Signature: "Generated Signature" </p></pre>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div data-testid="note-container-test" class="row note-container">
+                     <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Timestamp Header </span></nav>
+                     <div class="tab-pane tab-pane-container active">
+                        <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text-single" class="note-text-paragraph"> X-Veryfi-Request-Timestamp: "Unix Timestamp" </p></pre>
+                     </div>
+                  </div>
+               </div>
+               <div class="section-text-json-note-container">
+                  <div data-testid="tabs-code-viewer-test" class="row tabs-code-viewer-container">
+                     <nav data-testid="tabs-code-header" class="markdown-nav">
+                        <nav class="left-method-title"><span data-testid="method-code-header" class="method method-header-font">Signature Generation</span><span data-testid="endpoint-code-content" class="end-point method-header-font"></span></nav>
+                        <nav data-testid="dropdown-code-button" class="right-side-button-list">
+                           <ul data-testid="dropdown-code-list" class="nav-list-container">
+                              <li data-testid="dropdown-code-button-options">
+                                 <select class="code-example-select" data-testid="dropdown-select-test">
+                                    <option value="1" data-testid="select-option-test">PYTHON</option>
+                                    <option value="2" data-testid="select-option-test">PHP</option>
+                                    <option value="3" data-testid="select-option-test">JAVA</option>
+                                    <option value="4" data-testid="select-option-test">BASH</option>
+                                 </select>
+                              </li>
+                              <li data-testid="dropdown-code-button-options">
+                                 <a data-testid="copy-button-test">
+                                    <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-icon" data-testid="copy-code-test">
+                                       <path d="M0.743164 16.0107C0.743164 17.4395 1.44727 18.1572 2.8623 18.1572H9.28809C10.7031 18.1572 11.4072 17.4326 11.4072 16.0107V14.7461H12.6035C14.0117 14.7461 14.7227 14.0215 14.7227 12.5996V3.10449C14.7227 1.68262 14.0117 0.958008 12.6035 0.958008H6.17773C4.76953 0.958008 4.05859 1.67578 4.05859 3.10449V4.36914H2.8623C1.4541 4.36914 0.743164 5.08691 0.743164 6.51562V16.0107ZM7.72266 3.30273C7.42188 3.30273 7.28516 3.10449 7.28516 2.89941V2.75586C7.28516 2.54395 7.42188 2.35254 7.72266 2.35254H11.0586C11.3525 2.35254 11.4961 2.54395 11.4961 2.75586V2.89941C11.4961 3.10449 11.3525 3.30273 11.0586 3.30273H7.72266ZM1.84375 15.9902V6.5293C1.84375 5.85938 2.20605 5.46973 2.91699 5.46973H5.15918V9.43457C5.15918 10.2959 5.59668 10.7266 6.44434 10.7266H10.3066V15.9902C10.3066 16.6738 9.9375 17.0566 9.2334 17.0566H2.91016C2.20605 17.0566 1.84375 16.6738 1.84375 15.9902ZM6.57422 9.69434C6.30078 9.69434 6.19141 9.58496 6.19141 9.31152V5.72266L10.0947 9.69434H6.57422Z" fill="#B0B3CB"></path>
+                                    </svg>
+                                 </a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </nav>
+                     <div class="tab-content" style="z-index: -1;">
+                        <div data-testid="tab-code-container-1" class="tab-pane tab-pane-container active">
+                           <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-python" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(203, 120, 50);">import</span><span> time
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> hashlib
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> hmac
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> base64
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span><span>CLIENT_SECRET = </span><span style="color: rgb(106, 135, 89);">"CLIENT_SECRET"</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span>user_id = </span><span style="color: rgb(106, 135, 89);">"USER_ID"</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span><span></span><span style="color: rgb(127, 127, 127);"># Build signature</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span>timestamp = </span><span style="color: rgb(224, 196, 108);">int</span><span>(time.time() * </span><span style="color: rgb(104, 150, 186);">1000</span><span>)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>payload_to_sign = </span><span style="color: rgb(106, 135, 89);">"timestamp:{0},user_id:{1}"</span><span>.</span><span style="color: rgb(224, 196, 108);">format</span><span>(timestamp, user_id)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span>tmp_signature = hmac.new(CLIENT_SECRET, msg=payload, digestmod=hashlib.sha256).digest()
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span><span>secret_bytes = </span><span style="color: rgb(224, 196, 108);">bytes</span><span>(CLIENT_SECRET, </span><span style="color: rgb(106, 135, 89);">'utf-8'</span><span>)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span><span>payload_to_sign_bytes = </span><span style="color: rgb(224, 196, 108);">bytes</span><span>(payload_to_sign, </span><span style="color: rgb(106, 135, 89);">'utf-8'</span><span>)
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span>tmp_signature = hmac.new(secret_bytes, msg=payload_to_sign_bytes, digestmod=hashlib.sha256).digest()
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">16</span><span>signature = </span><span style="color: rgb(224, 196, 108);">str</span><span>(base64.b64encode(tmp_signature)).strip()
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">17</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">18</span><span></span><span style="color: rgb(224, 196, 108);">print</span><span> signature</span></code></pre>
+                        </div>
+                        <div data-testid="tab-code-container-2" class="tab-pane tab-pane-container">
+                           <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-php" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(127, 127, 127);">&lt;?php</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span>    </span><span style="color: rgb(203, 120, 50);">$CLIENT_SECRET</span><span> = </span><span style="color: rgb(106, 135, 89);">"CLIENT_SECRET"</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span>    </span><span style="color: rgb(203, 120, 50);">$user_id</span><span> = </span><span style="color: rgb(106, 135, 89);">"USER_ID"</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span>    </span><span style="color: rgb(127, 127, 127);">// Build signature</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span><span>    </span><span style="color: rgb(203, 120, 50);">$timestamp</span><span> = time() * </span><span style="color: rgb(104, 150, 186);">1000</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span>    </span><span style="color: rgb(203, 120, 50);">$payload_to_sign</span><span> = </span><span style="color: rgb(106, 135, 89);">"timestamp:</span><span style="color: rgb(224, 196, 108);">$timestamp</span><span style="color: rgb(106, 135, 89);">,user_id:</span><span style="color: rgb(224, 196, 108);">$user_id</span><span style="color: rgb(106, 135, 89);">"</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span><span>    </span><span style="color: rgb(203, 120, 50);">$tmp_signature</span><span> = hash_hmac(</span><span style="color: rgb(106, 135, 89);">'sha256'</span><span>, </span><span style="color: rgb(203, 120, 50);">$payload_to_sign</span><span>, </span><span style="color: rgb(203, 120, 50);">$CLIENT_SECRET</span><span>, </span><span style="color: rgb(104, 150, 186);">true</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span><span>    </span><span style="color: rgb(203, 120, 50);">$signature</span><span> = base64_encode(</span><span style="color: rgb(203, 120, 50);">$tmp_signature</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>    </span><span style="color: rgb(203, 120, 50);">print</span><span>(</span><span style="color: rgb(203, 120, 50);">$signature</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span><span></span><span style="color: rgb(127, 127, 127);">?&gt;</span></code></pre>
+                        </div>
+                        <div data-testid="tab-code-container-3" class="tab-pane tab-pane-container">
+                           <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-java" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span style="color: rgb(203, 120, 50);">import</span><span> javax.crypto.Mac;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">2</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> javax.crypto.spec.SecretKeySpec;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">3</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> java.nio.charset.StandardCharsets;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">4</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> java.security.InvalidKeyException;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">5</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> java.security.NoSuchAlgorithmException;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">6</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> java.util.Base64;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">7</span><span></span><span style="color: rgb(203, 120, 50);">import</span><span> java.util.Date;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">8</span>&ZeroWidthSpace;
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">9</span><span></span><span class="hljs-function" style="color: rgb(203, 120, 50);">public</span><span class="hljs-function"> String </span><span class="hljs-function hljs-title">getSignature</span><span class="hljs-function" style="color: rgb(185, 185, 185);">()</span><span class="hljs-function"> </span><span>{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">10</span><span>    String clientSecret = </span><span style="color: rgb(106, 135, 89);">"CLIENT_SECRET"</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">11</span><span>    String userId = </span><span style="color: rgb(106, 135, 89);">"USER_ID"</span><span>;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">12</span>    &ZeroWidthSpace;
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">13</span><span>    </span><span style="color: rgb(127, 127, 127);">// Build signature</span><span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">14</span><span>    Date date = </span><span style="color: rgb(203, 120, 50);">new</span><span> Date();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">15</span><span>    </span><span style="color: rgb(203, 120, 50);">long</span><span> timeStamp = date.getTime();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">16</span><span>    String message = </span><span style="color: rgb(106, 135, 89);">"timestamp:"</span><span> + timeStamp + </span><span style="color: rgb(106, 135, 89);">",user_id:"</span><span> + userId;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">17</span><span>    SecretKeySpec keySpec = </span><span style="color: rgb(203, 120, 50);">new</span><span> SecretKeySpec(clientSecret.getBytes(StandardCharsets.UTF_8), </span><span style="color: rgb(106, 135, 89);">"HmacSHA256"</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">18</span>    Mac mac;
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">19</span><span>    </span><span style="color: rgb(203, 120, 50);">try</span><span> {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">20</span><span>        mac = Mac.getInstance(</span><span style="color: rgb(106, 135, 89);">"HmacSHA256"</span><span>);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">21</span><span>    } </span><span style="color: rgb(203, 120, 50);">catch</span><span> (NoSuchAlgorithmException e) {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">22</span><span>        </span><span style="color: rgb(203, 120, 50);">return</span><span> e.getMessage();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">23</span>    }
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">24</span><span>    </span><span style="color: rgb(203, 120, 50);">try</span><span> {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">25</span>        mac.init(keySpec);
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">26</span><span>    } </span><span style="color: rgb(203, 120, 50);">catch</span><span> (InvalidKeyException e) {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">27</span><span>        </span><span style="color: rgb(203, 120, 50);">return</span><span>  e.getMessage();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">28</span>    }
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">29</span><span>    </span><span style="color: rgb(203, 120, 50);">byte</span><span>[] rawHmac = mac.doFinal(message.getBytes(StandardCharsets.UTF_8));
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">30</span>    String base64SignatureEncoded = Base64.getEncoder().encodeToString(rawHmac);
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">31</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">32</span><span>    </span><span style="color: rgb(203, 120, 50);">return</span><span> base64SignatureEncoded;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 2.25em; padding-right: 1em; text-align: right; user-select: none;">33</span>}</code></pre>
+                        </div>
+                        <div data-testid="tab-code-container-4" class="tab-pane tab-pane-container">
+                           <pre class="code-viewer" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"><code class="language-plaintext" style="white-space: pre;"><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">1</span><span>CLIENT_SECRET="CLIENT_SECRET"
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">2</span>user_id="USER_ID"
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">3</span>
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">4</span># Sign the request
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">5</span>timestamp=$(( $(date +%s) * 1000 ))
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">6</span>payload_to_sign="timestamp:${timestamp},user_id:${user_id}"
+<span class="comment linenumber react-syntax-highlighter-line-number" style="display: inline-block; min-width: 1.25em; padding-right: 1em; text-align: right; user-select: none;">7</span>base64_signature=$(echo -n ${payload_to_sign} | openssl sha256 -hmac ${CLIENT_SECRET} -binary | base64)</code></pre>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+      <div class="row">
+         <div class="col-md-12 middle-column-padding">
+            <h3 class="h3-title" id="new-api-docs-api-keys-permission">API Keys Access Permission</h3>
+            <p class="p-text">Verfyi provides additional control for Admin users when granting access to API Keys for safety and security reasons.</p>
+            <p class="p-text">Admin users with access to API Keys can only grant API Keys to other Admins. API Keys are not available to non-Admin team members. Visit <a href="https://faq.veryfi.com/en/articles/5254324-managing-my-team-workspace" style="color: rgb(139, 153, 238);">Managing my team workspace</a> to learn more about managing team members.</p>
+         </div>
+      </div>
+      <hr class="section-splitter">
+   </div>
+</div>
