@@ -1,0 +1,402 @@
+<div class="new-api-docs-container">
+   <div id="react-sdks-samples-intro-doc">
+      <div>
+         <div class="row">
+            <div class="col-md-6 middle-column-padding">
+               <h3 class="h3-title" id="sdk-samples-intro">SDKs &amp; Request Samples</h3>
+               <p class="p-text">An SDK is a set of tools (pre-written code) for 
+                  third-party developers (you) to use in your producing application/s using a particular 
+                  framework or platform like the Veryfi API. It’s the fastest and most convenient way to 
+                  engage with an API because all the heavy lifting of authentication, abstraction, etc… are 
+                  all taken care of for you in the language you work in.
+               </p>
+            </div>
+            <div class="col-md-6 middle-column-padding">
+               <div class="sections-render-row-note">
+                  <div data-testid="note-without-container-test" class="row note-container">
+                     <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Sdk Benefits </span></nav>
+                     <div class="tab-pane tab-pane-container active">
+                        <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph">1. Ship Faster
+  Using Veryfi SDKs allows you to accelerate development and integration with Veryfi and ultimately achieve time to value faster. Everyone wins.
+</p><p data-testid="note-paragraph-text" class="note-text-paragraph">2. Serenity
+  Let us help with accelerating your development. Veryfi SDKs include all the tools, helpers &amp; code samples you need to move fast, and pain free with Veryfi APIs.
+</p><p data-testid="note-paragraph-text" class="note-text-paragraph">3.Collaborate
+  Veryfi SDKs are built and maintained by developers for developers. Join the open source community, contribute and learn.</p></pre>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-splitter">
+      </div>
+   </div>
+   <div>
+      <div class="row">
+         <h3 class="h3-title" id="sdk-samples-uipath-postman">Request Samples</h3>
+         <div class="col-md-6">
+            <nav class="request-samples-nav"> <span data-testid="note-title-test" class="request-samples-tab method-header-font request-samples-title"> <img src="/static/brands/uipath-logo.svg" height="33" class="image-sample-header"> Example Project </span> </nav>
+            <div class="tab-pane tab-pane-container active">
+               <pre class="note-content samples-text-container">                        <p class="request-samples-paragraph"> Get up and running quickly with the Veryfi API in UIPath with this example UIPath project. </p>
+                    <button onclick="location.href = '/api/uipath-example-project';" class="request-samples-button">Download</button>
+                </pre>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <nav class="request-samples-nav"> <span data-testid="note-title-test" class="request-samples-tab method-header-font request-samples-title"> <img src="/static/brands/postman-v2.svg" height="33" class="image-sample-header"> Postman Request Samples </span> </nav>
+            <div class="tab-pane tab-pane-container active">
+               <pre class="note-content samples-text-container">                        <p class="request-samples-paragraph"> To help you get started with the Veryfi API, we've prepared a downloadable JSON export of the various REST requests described in this API Documentation section. Once you've downloaded the file, open the Postman app and navigate to File &gt; Import to import it. </p>
+                    <button onclick="IQBOXY.Partner.downloadPostmanFile('enabled_actions: get_user,create_user,delete_user,process_document,get_document,get_documents,update_document,delete_document,manage_tags,manage_line_items,process_w2,process_w9,process_business_card,process_check,detect_fraud');" class="request-samples-button">Download</button>
+                </pre>
+            </div>
+         </div>
+      </div>
+      <hr class="section-splitter">
+   </div>
+   <div id="react-sdks-samples-doc">
+      <div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="python-sdk-new-api-docs">Veryfi Python SDK</h3>
+                  <p class="p-text">Veryfi Python SDK is the Python module for communicating with the Veryfi API, 
+                     making it easy for developers like you and me to have our data captured using a few lines of code.
+                  </p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-python" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.youtube.com/watch?v=CwNkFxVEwuo" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Youtube </a></p>
+                     <p class="p-text">Check out our video tutorial session with Dmitry to learn how to  run Veryfi Python SDK in a few lines of code</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/python/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi Python SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi Python SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="java-sdk-new-api-docs">Veryfi Java SDK</h3>
+                  <p class="p-text">Veryfi Java SDK is the Java module for communicating with the Veryfi API, 
+                     making it easy for developers like you and me to have our data captured using 
+                     a few lines of code.
+                  </p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-java" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/java/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi Java SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi Java SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="node-sdk-new-api-docs">Veryfi Node.js SDK</h3>
+                  <p class="p-text">Veryfi Node.js SDK is the Node.js module for communicating with the Veryfi API, 
+                     making it easy for developers like you and me to have our data captured using a few lines of code.
+                  </p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-nodejs" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.youtube.com/watch?v=PcJdgnvyfBc" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Youtube </a></p>
+                     <p class="p-text">Check out our video tutorial session with Matt to learn how to integrate and run Veryfi Node.js SDK in a few lines of code</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/nodejs/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi Node.js SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi Node.js SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title">Veryfi PHP SDK</h3>
+                  <p class="p-text">Veryfi PHP SDK is the PHP module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title" id="php-sdk-new-api-docs">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-php" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/php/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi PHP SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi PHP SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="go-sdk-new-api-docs">Veryfi Go SDK</h3>
+                  <p class="p-text">Veryfi Go SDK is the Go module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-go" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.youtube.com/watch?v=HK-7lvY5J9E&amp;t=2s" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Youtube </a></p>
+                     <p class="p-text">Check out our video tutorial session with Matt to learn how to integrate and run Veryfi Go SDK in a few lines of code</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/go/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi Go SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi Go SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="dart-sdk-new-api-docs">Veryfi Dart SDK</h3>
+                  <p class="p-text">Veryfi Dart SDK is the Dart module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-dart" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/howto/how-to-streamline-your-bookkeeping-with-veryfis-dart-sdk/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi Dart SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi Dart SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="csharp-sdk-new-api-docs">Veryfi C# SDK</h3>
+                  <p class="p-text">Veryfi C# SDK is the C# module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-csharp" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/csharp/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi C# SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi C# SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="ruby-sdk-new-api-docs">Veryfi Ruby SDK</h3>
+                  <p class="p-text">Veryfi Ruby SDK is the Ruby module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-ruby" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                     <hr>
+                     <p><a href="https://www.youtube.com/watch?v=-x-eq4KQTAE" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Youtube </a></p>
+                     <p class="p-text">Check out our video tutorial session with Matt to learn how to integrate and run Veryfi Ruby SDK in a few lines of code</p>
+                     <hr>
+                     <p><a href="https://www.veryfi.com/ruby/" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Read Veryfi Ruby SDK Article</a></p>
+                     <p class="p-text">Learn more about the Veryfi Ruby SDK in our Blog Post</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="rust-sdk-new-api-docs">Veryfi Rust SDK</h3>
+                  <p class="p-text">Veryfi Rust SDK is the Rust module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-rust" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="kotlin-sdk-new-api-docs">Veryfi Kotlin SDK</h3>
+                  <p class="p-text">Veryfi Kotlin SDK is the Kotlin module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-kotlin" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="swift-sdk-new-api-docs">Veryfi Swift SDK</h3>
+                  <p class="p-text">Veryfi Swift SDK is the Swift module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-swift" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-6 middle-column-padding">
+                  <h3 class="h3-title" id="android-sdk-new-api-docs">Veryfi Android SDK</h3>
+                  <p class="p-text">Veryfi Android SDK is the Andoird module for communicating with the Veryfi API, making it easy for developers like you and me to have our data captured using a few lines of code.</p>
+                  <div class="sections-render-text-github-button">
+                     <div data-testid="github-button-section" class="github-render-button-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M17.9844 0.98047C8.32422 0.976564 0.5 8.79688 0.5 18.4492C0.5 26.082 5.39453 32.5703 12.2109 34.9531C13.1289 35.1836 12.9883 34.5313 12.9883 34.0859V31.0586C7.6875 31.6797 7.47266 28.1719 7.11719 27.5859C6.39844 26.3594 4.69922 26.0469 5.20703 25.4609C6.41406 24.8398 7.64453 25.6172 9.07031 27.7227C10.1016 29.25 12.1133 28.9922 13.1328 28.7383C13.3555 27.8203 13.832 27 14.4883 26.3633C8.99609 25.3789 6.70703 22.0273 6.70703 18.043C6.70703 16.1094 7.34375 14.332 8.59375 12.8984C7.79688 10.5352 8.66797 8.51172 8.78516 8.21094C11.0547 8.00781 13.4141 9.83594 13.5977 9.98047C14.8867 9.63282 16.3594 9.44922 18.0078 9.44922C19.6641 9.44922 21.1406 9.64063 22.4414 9.99219C22.8828 9.65625 25.0703 8.08594 27.1797 8.27735C27.293 8.57813 28.1445 10.5547 27.3945 12.8867C28.6602 14.3242 29.3047 16.1172 29.3047 18.0547C29.3047 22.0469 27 25.4023 21.4922 26.3711C21.9639 26.835 22.3385 27.3883 22.5941 27.9987C22.8496 28.609 22.981 29.2641 22.9805 29.9258V34.3203C23.0117 34.6719 22.9805 35.0195 23.5664 35.0195C30.4844 32.6875 35.4648 26.1523 35.4648 18.4531C35.4648 8.79688 27.6367 0.98047 17.9844 0.98047Z" fill="#171C3A"></path>
+                        </svg>
+                        <p class="github-render-button-text">Available on GitHub</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 middle-column-padding">
+                  <div class="api-response-container-0">
+                     <h5 class="h5-title">Tutorials:</h5>
+                     <hr>
+                     <p><a href="https://github.com/veryfi/veryfi-android" target="_blank" style="color: rgb(139, 153, 238); font-size: 16px;">Getting started on Github</a></p>
+                     <p class="p-text">Clone the repository, follow a step by step guide, extract data from document in seconds</p>
+                  </div>
+               </div>
+            </div>
+            <hr class="section-splitter">
+         </div>
+      </div>
+   </div>
+</div>
