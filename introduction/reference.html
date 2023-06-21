@@ -1,0 +1,89 @@
+<div id="new-api-docs-introduction">
+   <div class="row">
+      <div class="col-md-12 middle-column-padding">
+         <h3 class="h3-title" id="api-docs-api-reference">Reference</h3>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-12 middle-column-padding">
+         <h3 class="h3-title" id="api-docs-tls">TLS only</h3>
+         <p class="p-text">All requests are done over TLS v1.2. TLS uses stronger encryption algorithms and has 
+            the ability to work on different ports. Both SSL 2.0 and 3.0 have been deprecated by the IETF 
+            (in 2011 and 2015, respectively). Ref: <a href="https://www.globalsign.com/en/blog/ssl-vs-tls-difference/" target="_blank" style="color: rgb(139, 153, 238);">https://www.globalsign.com/en/blog/ssl-vs-tls-difference/</a>
+         </p>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-12 middle-column-padding">
+         <h3 class="h3-title" id="api-docs-utf-encoding">UTF-8 encoding</h3>
+         <p class="p-text">Every string passed to and from the API needs to be UTF-8 encoded. For maximum compatibility, 
+            normalize to Unicode Normalization Form C (NFC) before UTF-8 encoding.
+         </p>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-6 middle-column-padding">
+         <h3 class="h3-title" id="api-docs-date-datetime">Date and Datetime Formats</h3>
+         <p class="p-text">All dates in the API are strings in the following format</p>
+      </div>
+      <div class="col-md-6 middle-column-padding">
+         <div class="sections-render-row-note">
+            <div data-testid="note-without-container-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Date </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph">"YYYY-MM-DD"</p><p data-testid="note-paragraph-text" class="note-text-paragraph">Example: "2016-06-04"</p></pre>
+               </div>
+            </div>
+         </div>
+         <div class="sections-render-row-note">
+            <div data-testid="note-without-container-test" class="row note-container">
+               <nav class="response-nav"><span data-testid="note-title-test" class="response-tab method-header-font title-note"> Date With Time </span></nav>
+               <div class="tab-pane tab-pane-container active">
+                  <pre class="display: block; overflow-x: auto; padding: 0.5em; background-color: rgb(244, 244, 244); color: black; note-content"><p data-testid="note-paragraph-text" class="note-text-paragraph">"YYYY-MM-DD HH:MM:SS"</p><p data-testid="note-paragraph-text" class="note-text-paragraph">Example: "2016-06-04 22:31:20"</p></pre>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <hr class="section-splitter">
+   <div class="row">
+      <div class="col-md-12 middle-column-padding">
+         <h3 class="h3-title" id="api-docs-response-codes">API Response Codes</h3>
+         <p class="p-text">Errors are returned using standard HTTP error code syntax. Any additional info is 
+            included in the JSON-formatted body of the return call.
+         </p>
+      </div>
+      <div class="col-md-12 middle-column-padding">
+         <h5 class="h5-title bold-text">API Success Codes</h5>
+         <hr>
+         <p class="p-text"><span class="bold-text">200</span> - Default OK</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">201</span> - Object Created OK</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">202</span> - Accepted</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">204</span> - Empty Response</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">205-299</span> - Success codes that are Currently not used in Veryfi APIs</p>
+      </div>
+      <div class="col-md-12 middle-column-padding">
+         <h5 class="h5-title bold-text" style="margin-top: 48px;">API Error Codes</h5>
+         <hr>
+         <p class="p-text"><span class="bold-text">400</span> - Bad input parameter. The error message should indicate which one and why.</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">401</span> - Bad or expired api_key. This can happen if the access token was revoked or expired. To fix, you should re-authenticate the user.</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">403</span> - Forbidden request, when a user is not authorized to perform a certain action.</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">405</span> - Request method not expected (generally should be OPTIONS, GET, POST, PUT).</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">503</span> - Service Unavailable. Suspicious Behavior Detected.</p>
+         <hr>
+         <p class="p-text"><span class="bold-text">5xx</span> - Server-Side Error.</p>
+      </div>
+   </div>
+   <hr class="section-splitter">
+</div>
